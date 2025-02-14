@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  cursor: none;
+}
+
+::selection {
+  background-color: #494368;
+  color: #ffffff;
+}
+
+.pixel {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@theme {
+  /* colours */
+  --color-background: #212529;
+  --color-background-light: #e9ecef;
+  --color-heading-light: #e9ecef;
+  --color-heading-dark: #343a40;
+
+  /* fonts */
+  --font-bowlby: "Bowlby One SC", serif;
+  --font-gemunu: "Gemunu Libre", serif;
+
+  /* spacing */
+  --spacing-horizontal: 100px;
+  --spacing-vertical: 80px;
+
+  --spacing-bottom: 60px;
+
+  --spacing-div-side: 20px;
+}
+
+@layer utilities {
+  .hover\:rotate-3d:hover {
+    transform: perspective(500px) rotateX(10deg) rotateY(10deg);
+  }
+}
+
+.svg path {
+  fill: transparent;
+  stroke: #f8f9fa;
+  stroke-width: 0.5;
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  animation: textAnimation 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes textAnimation {
+  0% {
+    stroke-dashoffset: 50;
+    fill: transparent;
+  }
+  70% {
+    fill: transparent;
+  }
+  90% {
+    stroke-dashoffset: 0;
+    fill: #f8f9fa;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: #f8f9fa;
+  }
+}
+
+/*  */
+
+.projects {
+  height: 180vh;
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+.pList {
+  position: sticky;
+  padding: 40px;
+  top: 0;
+  display: flex;
+  gap: 80px;
+  height: 60vh;
+  width: max-content;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: transform;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}

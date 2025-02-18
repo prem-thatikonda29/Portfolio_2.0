@@ -1,49 +1,3 @@
-// import React, { useRef } from "react";
-// import { motion, useScroll, useTransform } from "framer-motion";
-// import Project from "../organs/Project";
-// import { projectsList } from "../constants/constants";
-
-// function Projects() {
-//   const ref = useRef(null);
-//   const { scrollYProgress } = useScroll({
-//     target: ref,
-//     offset: ["start start", "end end"],
-//   });
-
-//   const xTranslate = useTransform(
-//     scrollYProgress,
-//     [0, 1],
-//     [0, -window.innerWidth * projectsList.length]
-//   );
-
-//   return (
-//     <section ref={ref} className="w-full h-screen bg-background-light dark:bg-background px-horizontal py-vertical overflow-hidden">
-//       <h1 className="text-heading dark:text-heading-light font-bowlby text-5xl mb-bottom">
-//         Stuff I&apos;ve done
-//       </h1>
-
-//       <div className="relative w-full h-full flex projectsList-center">
-//         <motion.div
-//           style={{ x: xTranslate }}
-//           className="flex gap-8"
-//         >
-//           {projectsList.map((project) => (
-//             <Project
-//               key={project.id}
-//               name={project.name}
-//               techStack={project.techStack}
-//               githubLink={project.githubLink}
-//               liveLink={project.liveLink}
-//             />
-//           ))}
-//         </motion.div>
-//       </div>
-//     </section>
-//   );
-// }
-
-// export default Projects;
-
 import { useEffect, useRef, useState } from "react";
 import "../index.css";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -111,60 +65,76 @@ const ListItem = ({ item }) => {
   );
 };
 
+// const Projects = () => {
+//   const [containerDistance, setContainerDistance] = useState(0);
+//   const ref = useRef(null);
+
+//   useEffect(() => {
+//     const calculateDistance = () => {
+//       if (ref.current) {
+//         const rect = ref.current.getBoundingClientRect();
+//         setContainerDistance(rect.left);
+//       }
+//     };
+
+//     calculateDistance();
+//     window.addEventListener("resize", calculateDistance);
+//     return () => window.removeEventListener("resize", calculateDistance);
+//   }, []);
+
+//   const { scrollYProgress } = useScroll({
+//     target: ref,
+//     offset: ["start start", "end end"],
+//   });
+//   const xTranslate = useTransform(
+//     scrollYProgress,
+//     [0, 1],
+//     [0, -(projectsList.length * 92 + (projectsList.length - 1) * 40)] // Accounts for width & gap
+//   );
+
+//   return (
+//     <div
+//       className="projects px-horizontal py-vertical bg-background-light dark:bg-background"
+//       ref={ref}
+//     >
+//       <h1 className="text-5xl font-bowlby dark:text-heading-light">
+//         Stuff that I&apos;ve done
+//       </h1>
+//       <motion.div className="pList" style={{ x: xTranslate }} initial={false}>
+//         {/* <div
+//           className="empty"
+//           style={{
+//             width: window.innerWidth - containerDistance,
+//           }}
+//         /> */}
+//         {/* <div className="empty" style={{ width: "10vw" }} /> */}
+//         {projectsList.map((item) => (
+//           <ListItem item={item} key={item.id} />
+//         ))}
+//       </motion.div>
+//       <section />
+//       <section />
+//     </div>
+//   );
+// };
+
+// export default Projects;
+
 const Projects = () => {
-  const [containerDistance, setContainerDistance] = useState(0);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    const calculateDistance = () => {
-      if (ref.current) {
-        const rect = ref.current.getBoundingClientRect();
-        setContainerDistance(rect.left);
-      }
-    };
-
-    calculateDistance();
-    window.addEventListener("resize", calculateDistance);
-    return () => window.removeEventListener("resize", calculateDistance);
-  }, []);
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end end"],
-  });
-
-  const xTranslate = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [0, -window.innerWidth * projectsList.length],
-    {
-      damping: 20,
-      stiffness: 90,
-      mass: 1,
-    }
-  );
-
   return (
-    <div
-      className="projects px-horizontal py-vertical bg-background-light dark:bg-background"
-      ref={ref}
-    >
-      <h1 className="text-5xl font-bowlby dark:text-heading-light">
+    <div className="projects bg-background-light dark:bg-background">
+      <h1 className="text-5xl font-bowlby dark:text-heading-light mb-4">
         Stuff that I&apos;ve done
       </h1>
-      <motion.div className="pList" style={{ x: xTranslate }} initial={false}>
-        <div
-          className="empty"
-          style={{
-            width: window.innerWidth - containerDistance,
-          }}
-        />
-        {projectsList.map((item) => (
-          <ListItem item={item} key={item.id} />
-        ))}
-      </motion.div>
-      <section />
-      <section />
+
+      {/* Scrollable Container */}
+      <div className="pContainer">
+        <div className="pList">
+          {projectsList.map((item) => (
+            <ListItem item={item} key={item.id} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

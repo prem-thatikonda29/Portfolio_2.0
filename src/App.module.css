@@ -22,7 +22,7 @@
   height: 100vh;
   pointer-events: none;
   background: url("https://media.gettyimages.com/id/1414407360/video/tv-vhs-noise-and-damage-stock-video.jpg?s=640x640&k=20&c=QCt6buudBqlN0OcVirohcZ1e3mzqOL1WaEv9byJS8-I=");
-  opacity: 0.4;
+  opacity: 0.6;
   /* animation: grain 1s steps(4) infinite; */
   mix-blend-mode: soft-light;
   z-index: 10;

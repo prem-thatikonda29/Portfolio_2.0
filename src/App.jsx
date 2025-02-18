@@ -4,6 +4,7 @@ import NameAnimation from "./organs/NameAnimation";
 import Landing from "./organisms/Landing";
 import About from "./organisms/About";
 import Projects from "./organisms/Projects";
+import EmblaCarousel from "./organisms/EmblaCarousel";
 import Cursor from "./organs/Cursor";
 import Tech from "./organisms/Tech";
 import Contact from "./organisms/Contact";
@@ -22,7 +23,8 @@ function App() {
           <NameAnimation />
           <Landing />
           <About />
-          <Projects />
+          {/* <Projects /> */}
+          <EmblaCarousel options={{ loop: true }} />
           <Tech />
           <Contact />
           <Footer />

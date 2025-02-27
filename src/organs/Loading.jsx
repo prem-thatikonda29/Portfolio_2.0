@@ -69,8 +69,8 @@ function Loading({ onComplete }) {
         ></div>
         {/* Rocket Icon */}
         <Rocket
-          size={120}
-          className="absolute -top-12 text-white transition-all duration-100 ease-linear rotate-45"
+          size={60}
+          className="absolute -top-8 sm:-top-10 md:-top-12 text-white transition-all duration-100 ease-linear rotate-45 sm:size-80 md:size-80"
           style={{ left: `${progress}%`, transform: "translateX(-50%)" }}
         />
       </div>

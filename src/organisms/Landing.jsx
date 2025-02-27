@@ -14,7 +14,8 @@ const Landing = () => {
   }, []);
 
   const handleMouseMove = (e, section) => {
-    if (!containerRef.current) return;
+    // Only apply mouse move effects on larger screens
+    if (!containerRef.current || window.innerWidth < 768) return;
 
     const { clientX } = e;
     const { left, right, width } = containerRef.current.getBoundingClientRect();
@@ -68,22 +69,22 @@ const Landing = () => {
   return (
     <section
       ref={containerRef}
-      className="bg-background h-screen w-full flex overflow-hidden"
+      className="bg-background h-screen w-full md:flex block overflow-hidden"
       id="landing"
     >
-      {/* Developer Section (Left) */}
+      {/* Developer Section */}
       <div
         ref={devSection}
-        className="section developer bg-background flex-grow flex items-center justify-center"
+        className="section developer bg-background md:flex-grow md:w-auto w-full h-1/2 md:h-full flex items-center justify-center"
         onMouseMove={(e) => handleMouseMove(e, "dev")}
       >
         <Landing_left />
       </div>
 
-      {/* Designer Section (Right) */}
+      {/* Designer Section */}
       <div
         ref={designSection}
-        className="section designer bg-background-light flex-grow flex items-center justify-center"
+        className="section designer bg-background-light md:flex-grow md:w-auto w-full h-1/2 md:h-full flex items-center justify-center"
         onMouseMove={(e) => handleMouseMove(e, "design")}
       >
         <Landing_right />

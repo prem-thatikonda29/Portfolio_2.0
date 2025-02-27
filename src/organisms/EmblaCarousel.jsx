@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { projectsList } from "../constants/constants";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+// import { Noise } from "@reactbits/ui";
 
 const usePrevNextButtons = (emblaApi) => {
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
@@ -83,6 +84,7 @@ const EmblaCarousel = ({ options }) => {
 
   return (
     <section className="w-full h-[640px] px-horizontal py-vertical bg-background-light dark:bg-background">
+      {/* <Noise opacity={0.15} className="absolute inset-0" /> */}
       <h1 className="text-heading-dark dark:text-heading-light text-5xl font-bowlby mb-bottom">
         Stuff that I&apos;ve Done
       </h1>

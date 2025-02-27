@@ -86,14 +86,14 @@ const EmblaCarousel = ({ options }) => {
   } = usePrevNextButtons(emblaApi);
 
   return (
-    <section className="w-full h-auto min-h-[640px] px-4 sm:px-8 md:px-horizontal py-vertical bg-background-light dark:bg-background">
+    <section className="w-full h-auto min-h-[480px] md:min-h-[640px] px-4 sm:px-8 md:px-horizontal py-vertical bg-background-light dark:bg-background">
       {/* <Noise opacity={0.15} className="absolute inset-0" /> */}
       <h1 className="text-3xl sm:text-4xl md:text-5xl font-bowlby text-heading-dark dark:text-heading-light mb-bottom">
         Stuff that I&apos;ve Done
       </h1>
 
       {/* Dots navigation - show on all devices */}
-      <div className="flex w-full justify-end space-x-2 mb-4 md:mb-8">
+      <div className="flex w-full justify-end space-x-2 mb-4">
         {scrollSnaps.map((_, index) => (
           <button
             key={index}

@@ -92,6 +92,8 @@ const EmblaCarousel = ({ options }) => {
         Stuff that I&apos;ve Done
       </h1>
 
+      <p className="text-gray-200">(adding the links and descriptions soon)</p>
+
       {/* Dots navigation - show on all devices */}
       <div className="flex w-full justify-end space-x-2 mb-4">
         {scrollSnaps.map((_, index) => (

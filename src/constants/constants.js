@@ -30,13 +30,20 @@ const projectsList = [
     techStack: ["ReactJs", "Firebase"],
     githubLink: "https://github.com/prem-thatikonda29/LinkedIn_Clone",
   },
-  // {
-  //   id: 6,
-  //   name: "Apple Website Clone",
-  //   techStack: ["ReactJs", "TailwindCSS", "ThreeJs", "GSAP"],
-  //   githubLink: "https://github.com/prem-thatikonda29/Apple_Website_Clone",
-  //   liveLink: "https://prem-thatikonda29.github.io/Apple_Website_Clone/",
-  // },
+  {
+    id: 6,
+    name: "Vitals",
+    techStack: [
+      "ReactJs",
+      "TailwindCSS",
+      "MongoDB",
+      "NodeJs",
+      "Gemini API",
+      "GSAP",
+    ],
+    // to be edited
+    githubLink: "https://github.com/prem-thatikonda29/Apple_Website_Clone",
+  },
 ];
 
 export { projectsList };

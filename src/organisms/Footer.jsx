@@ -6,7 +6,7 @@ function Footer() {
   const icons = [Instagram, Linkedin, Github, Twitter];
 
   return (
-    <div className="w-full min-h-[15vh] py-6 sm:py-8 bg-background-light dark:bg-background border-t border-background dark:border-background-light shadow-lg flex flex-wrap items-center justify-center gap-6 sm:gap-8">
+    <div className="w-full min-h-[15vh] py-6 sm:py-8 sm:mt-12 bg-background-light dark:bg-background border-t border-background dark:border-background-light shadow-lg flex flex-wrap items-center justify-center gap-6 sm:gap-8">
       {icons.map((Icon, index) => (
         <Tilt
           key={index}

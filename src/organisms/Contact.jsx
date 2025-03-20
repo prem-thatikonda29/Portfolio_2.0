@@ -50,7 +50,7 @@ function Contact() {
   };
 
   return (
-    <section className="w-full h-[90vh] px-4 sm:px-8 md:px-horizontal py-vertical bg-background-light dark:bg-background flex flex-col">
+    <section className="w-full h-[90vh] px-4 sm:px-8 sm:py-10 md:px-horizontal py-vertical bg-background-light dark:bg-background flex flex-col">
       <h1 className="text-3xl sm:text-4xl md:text-5xl font-bowlby text-heading dark:text-heading-light mb-bottom">
         Got something to talk about?
       </h1>

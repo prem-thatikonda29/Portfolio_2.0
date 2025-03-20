@@ -58,7 +58,7 @@ function About() {
         <img
           src={aboutImg}
           alt="my image"
-          className="w-full h-auto object-cover grayscale-100 hover:grayscale-0 transition-all duration-500 ease-in-out"
+          className="w-full h-auto object-cover md:grayscale-100 hover:grayscale-0 transition-all duration-500 ease-in-out sm:grayscale-0"
         />
       </div>
 
